@@ -1,31 +1,88 @@
 <mvc:View controllerName="todolistui.controller.Home"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
-    xmlns="sap.m">
+    xmlns="sap.m"
+    xmlns:ui="sap.ui.table">
     <Page id="page" title="{i18n>title}">
 
-        <Table mode="SingleSelect" items="{path: '/Books'}">
+        <!-- <ui:Table rows="{path: '/Activity' , parameters: {$expand:'DETAILS'}}" >
+            <ui:columns>
+                <ui:Column >
+						<Label text="Nome Attività" />
+						<ui:template>
+							<Text text="{NAME}" wrapping="false" />
+						</ui:template>
+                </ui:Column>
+                <ui:Column >
+					<Label text="Completata" />
+						<ui:template>
+							<Text text="{DONE}" wrapping="false" />
+						</ui:template>
+                </ui:Column>
+                <ui:Column >
+					<Label text="In carico a" />
+						<ui:template>
+							<Text text="{OWNER}" wrapping="false" />
+						</ui:template>
+                </ui:Column>
+                <ui:Column >
+					<Label text="Data inizio" />
+						<ui:template>
+							<Text text="{START_TS}" wrapping="false" />
+						</ui:template>
+                </ui:Column>
+                <ui:Column >
+					<Label text="Data fine" />
+						<ui:template>
+							<Text text="{END_TS}" wrapping="false" />
+						</ui:template>
+                </ui:Column>
+            </ui:columns>
+        </ui:Table> -->
+
+
+        <Table mode="MultiSelect" items="{path: '/Activity'}">
+
+				<headerToolbar>
+					<OverflowToolbar>
+						<ToolbarSpacer />
+                        <Button id="createButton" text="Create" type="Transparent" press="onCreate('create_activity')" visible="{home>/displayMode}" />
+						<Button id="editButton" text="Edit" type="Transparent" press="onEdit" visible="{home>/displayMode}" />
+						<Button id="saveButton" text="Save" type="Transparent" press="onSave" visible="{home>/editMode}" />
+						<Button id="cancelButton" text="Cancel" type="Transparent" press="onCancel" visible="{home>/editMode}" />
+					</OverflowToolbar>
+				</headerToolbar>
+
+
             <columns>
                 <Column >
-                    <Text text="Title"></Text>
+                    <Text text="Nome Attività"></Text>
                 </Column>
                 <Column >
-                    <Text text="Stock"></Text>
+                    <Text text="Completata"></Text>
+                </Column>
+                <Column >
+                    <Text text="In carico a"></Text>
+                </Column>
+                <Column >
+                    <Text text="Data Inizio"></Text>
+                </Column>
+                <Column >
+                    <Text text="Data Fine"></Text>
                 </Column>
             </columns>
 
             <items>
              <ColumnListItem >
                 <cells>
-                <Text text="{title}"></Text>
-                <Text text="{stock}"></Text>
+                <Input value="{NAME}" editable="{home>/editMode}"></Input>
+                <Input value="{DONE}" editable="{home>/editMode}"></Input>
+                <Input value="{OWNER}" editable="{home>/editMode}"></Input>
+                <Input value="{START_TS}" editable="{home>/editMode}"></Input>
+                <Input value="{END_TS}" editable="{home>/editMode}"></Input>
                 </cells>
              </ColumnListItem>
             </items>
-
-
         </Table>
-
-
 
     </Page>
 </mvc:View>

@@ -3,10 +3,10 @@
  */
 
 sap.ui.define([
-        "sap/ui/core/UIComponent",
-        "sap/ui/Device",
-        "todolistui/model/models"
-    ],
+    "sap/ui/core/UIComponent",
+    "sap/ui/Device",
+    "todolistui/model/models"
+],
     function (UIComponent, Device, models) {
         "use strict";
 
@@ -29,6 +29,9 @@ sap.ui.define([
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");
+                this.setModel(models.createHomePageModel(), "home")
+                this.setModel(models.createFragmentCreateActivityModel(), "create_activity")
+                this.setModel(models.createFragmentModel(), "fragments")
             }
         });
     }

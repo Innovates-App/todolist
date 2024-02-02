@@ -1,5 +1,6 @@
-using my.bookshop as my from '../db/data-model';
+using todolist as my from '../db/data-model';
 
 service CatalogService {
-    @readonly entity Books as projection on my.Books;
+    entity Activity as projection on my.activity;
+    entity Activity_Detail as projection on my.activity_detail;
 }

@@ -1,0 +1,50 @@
+<core:FragmentDefinition 
+    xmlns="sap.m" 
+    xmlns:core="sap.ui.core" 
+    xmlns:u="sap.ui.unified" 
+    templateShareable="false" class="sapUiTinyMarginTop">
+
+  <Dialog title="Creazione nuova attività" contentWidth="60rem" contentHeight="10rem" class="sapUiSmallMargin">
+    <content>
+
+      <Table backgroundDesign="Solid" width="auto" fixedLayout="true" class="sapUiTinyMargin sapUiTableBorderVisible">
+
+        <columns>
+          <Column>
+            <Text text="Nome Attività" />
+          </Column>
+          <Column>
+            <Text text="Completata" />
+          </Column>
+          <Column>
+            <Text text="In carico a" />
+          </Column>
+          <Column>
+            <Label text="Data Inizio"/>
+          </Column>
+          <Column>
+            <Label text="Data Fine"/>
+          </Column>
+        </columns>
+
+        <items>
+          <ColumnListItem>
+            <cells>
+              <Input value="{create_activity>/NAME}"/>
+              <Input value="{create_activity>/DONE}"/>
+              <Input value="{create_activity>/OWNER}" />
+              <Input value="{create_activity>/START_TS}" />
+              <Input value="{create_activity>/END_TS}" />
+            </cells>
+          </ColumnListItem>
+        </items>
+      </Table>
+    </content>
+    <beginButton>
+      <Button text="{i18n>addCompanyButton}" type="Emphasized" press=".handleCreateCompany($event, 'create_company')" />
+    </beginButton>
+    <endButton>
+      <Button text="{i18n>cancelButton}" press=".closeFragment('create_activity')" />
+    </endButton>
+  </Dialog>
+</core:FragmentDefinition>
