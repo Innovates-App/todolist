@@ -1,0 +1,31 @@
+<mvc:View controllerName="todolistui.controller.Home"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+
+        <Table mode="SingleSelect" items="{path: '/Books'}">
+            <columns>
+                <Column >
+                    <Text text="Title"></Text>
+                </Column>
+                <Column >
+                    <Text text="Stock"></Text>
+                </Column>
+            </columns>
+
+            <items>
+             <ColumnListItem >
+                <cells>
+                <Text text="{title}"></Text>
+                <Text text="{stock}"></Text>
+                </cells>
+             </ColumnListItem>
+            </items>
+
+
+        </Table>
+
+
+
+    </Page>
+</mvc:View>
