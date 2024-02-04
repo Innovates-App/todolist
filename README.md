@@ -19,6 +19,6 @@ File or Folder | Purpose
 - _**Terminal** > install dependencies > run `npm i` on root and on ui folder
 - _**Terminal** > login to CF > `cf login`
 - _**Terminal** > build and deploy app to CF > `mbt build` and `cf deploy mta_archives/todolist_1.0.0.mtar` on root folder
-- _**Terminal** > bindind to service instances >
+- _**Terminal** > bindind to service instances > `cds bind -2 SERVICE_INSTANCE:SERVICE_KEY`
 - _**Terminal** > start services > `cds watch --profile hybrid` 
 - open a new _**Terminal** > start UI >  move to UI folder and run `npm run start-local`
