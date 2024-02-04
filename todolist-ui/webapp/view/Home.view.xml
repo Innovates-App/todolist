@@ -45,10 +45,10 @@
 				<headerToolbar>
 					<OverflowToolbar>
 						<ToolbarSpacer />
-                        <Button id="createButton" text="Create" type="Transparent" press="onCreate('create_activity')" visible="{home>/displayMode}" />
-						<Button id="editButton" text="Edit" type="Transparent" press="onEdit" visible="{home>/displayMode}" />
-						<Button id="saveButton" text="Save" type="Transparent" press="onSave" visible="{home>/editMode}" />
-						<Button id="cancelButton" text="Cancel" type="Transparent" press="onCancel" visible="{home>/editMode}" />
+                        <Button id="createButton" text="Crea" type="Transparent" press="onCreate('create_activity')" visible="{home>/displayMode}" />
+						<Button id="editButton" text="Modifica" type="Transparent" press="onEdit" visible="{home>/displayMode}" />
+						<Button id="saveButton" text="Salva" type="Transparent" press="onSave" visible="{home>/editMode}" />
+						<Button id="cancelButton" text="Cancella" type="Transparent" press="onCancel" visible="{home>/editMode}" />
 					</OverflowToolbar>
 				</headerToolbar>
 

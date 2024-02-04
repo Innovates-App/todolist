@@ -10,7 +10,7 @@ sap.ui.define([
 
         return Controller.extend("todolistui.controller.Home", {
             onInit: function () {
-
+                //autenticazione
             },
 
             onEdit: function () {
@@ -54,6 +54,11 @@ sap.ui.define([
                     fragment.opened = true
                 }
                 fragmentModel.setProperty(`/fragments/${sFragmentName}/`, fragment)
+            },
+
+
+            handleCreateActivity: function (oEvent, sFragmentName) {
+                console.log("creazione in corso")
             },
 
 

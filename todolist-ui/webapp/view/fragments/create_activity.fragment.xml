@@ -41,10 +41,10 @@
       </Table>
     </content>
     <beginButton>
-      <Button text="{i18n>addCompanyButton}" type="Emphasized" press=".handleCreateCompany($event, 'create_company')" />
+      <Button text="Crea" type="Emphasized" press=".handleCreateActivity($event, 'create_activity')" />
     </beginButton>
     <endButton>
-      <Button text="{i18n>cancelButton}" press=".closeFragment('create_activity')" />
+      <Button text="Cancella" press=".closeFragment('create_activity')" />
     </endButton>
   </Dialog>
 </core:FragmentDefinition>
