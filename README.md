@@ -6,7 +6,7 @@ It contains these folders and files, following our recommended project layout:
 
 File or Folder | Purpose
 ---------|----------
-`app/` | content for UI frontends goes here
+`todolist-ui/` | content for UI frontends goes here
 `db/` | your domain models and data go here
 `srv/` | your service models and code go here
 `package.json` | project metadata and configuration
@@ -15,11 +15,10 @@ File or Folder | Purpose
 
 ## Next Steps
 
-- Open a new terminal and run `cds watch` 
-- (in VS Code simply choose _**Terminal** > Run Task > cds watch_)
-- Start adding content, for example, a [db/schema.cds](db/schema.cds).
-
-
-## Learn More
-
-Learn more at https://cap.cloud.sap/docs/get-started/.
+- git clone this repo
+- _**Terminal** > install dependencies > run `npm i` on root and on ui folder
+- _**Terminal** > login to CF > `cf login`
+- _**Terminal** > build and deploy app to CF > `mbt build` and `cf deploy mta_archives/todolist_1.0.0.mtar` on root folder
+- _**Terminal** > bindind to service instances >
+- _**Terminal** > start services > `cds watch --profile hybrid` 
+- open a new _**Terminal** > start UI >  move to UI folder and run `npm run start-local`
