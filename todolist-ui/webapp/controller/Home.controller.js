@@ -27,6 +27,8 @@ sap.ui.define([
             onSave: async function () {
                 try {
                     await this.getView().getModel().submitChanges()
+                    this.getView().getModel("home").setProperty("/editMode", false)
+                    this.getView().getModel("home").setProperty("/displayMode", true)
                 } catch (error) {
                     MessageBox.error(e.message)
                 }
@@ -57,8 +59,16 @@ sap.ui.define([
             },
 
 
-            handleCreateActivity: function (oEvent, sFragmentName) {
-                console.log("creazione in corso")
+            handleCreateActivity: function (sFragmentName) {
+                const oModel = this.getView().getModel()
+                const oEntry = this.getView().getModel("create_activity").getData()
+                try {
+                    oModel.create("/Activity", oEntry)
+                    oModel.refresh()
+                    this.closeFragment(sFragmentName)
+                } catch (error) {
+                    MessageBox.alert(error.message, { icon: MessageBox.Icon.ERROR, title: "Error" })
+                }
             },
 
 
@@ -75,6 +85,27 @@ sap.ui.define([
                     }
                 }
             },
+
+            onDelete: function (oEvent) {
+                console.log("Cancellazione Attività")
+                const oTable = this.getView().byId("activityTable")
+                const aSelectedItems = oTable.getSelectedItems()
+                const oModel = this.getView().getModel()
+
+                if (aSelectedItems.length === 0) {
+                    MessageBox.alert("Selezionare almeno un record")
+                    return
+                }
+
+                try {
+                    for (let index = 0; index < aSelectedItems.length; index++) {
+                        const selectedItemPath = aSelectedItems[index].getBindingContext().sPath
+                        oModel.remove(selectedItemPath);
+                    }
+                } catch (error) {
+                    MessageBox.error(error.message)
+                }
+            }
 
         });
     });

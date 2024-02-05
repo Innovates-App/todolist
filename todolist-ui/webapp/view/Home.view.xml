@@ -40,15 +40,16 @@
         </ui:Table> -->
 
 
-        <Table mode="MultiSelect" items="{path: '/Activity'}">
+        <Table id="activityTable" mode="MultiSelect" items="{path: '/Activity'}">
 
 				<headerToolbar>
 					<OverflowToolbar>
 						<ToolbarSpacer />
                         <Button id="createButton" text="Crea" type="Transparent" press="onCreate('create_activity')" visible="{home>/displayMode}" />
 						<Button id="editButton" text="Modifica" type="Transparent" press="onEdit" visible="{home>/displayMode}" />
+						<Button id="deleteButton" text="Elimina" type="Transparent" press="onDelete" visible="{home>/displayMode}" />
 						<Button id="saveButton" text="Salva" type="Transparent" press="onSave" visible="{home>/editMode}" />
-						<Button id="cancelButton" text="Cancella" type="Transparent" press="onCancel" visible="{home>/editMode}" />
+						<Button id="cancelButton" text="Annulla" type="Transparent" press="onCancel" visible="{home>/editMode}" />
 					</OverflowToolbar>
 				</headerToolbar>
 
@@ -75,10 +76,13 @@
              <ColumnListItem >
                 <cells>
                 <Input value="{NAME}" editable="{home>/editMode}"></Input>
-                <Input value="{DONE}" editable="{home>/editMode}"></Input>
+                <!-- <Input value="{DONE}" editable="{home>/editMode}"></Input> -->
+                <CheckBox selected="{DONE}" editable="{home>/editMode}"></CheckBox>
                 <Input value="{OWNER}" editable="{home>/editMode}"></Input>
-                <Input value="{START_TS}" editable="{home>/editMode}"></Input>
-                <Input value="{END_TS}" editable="{home>/editMode}"></Input>
+                <!-- <Input value="{START_TS}" editable="{home>/editMode}"></Input> -->
+                <!-- <Input value="{END_TS}" editable="{home>/editMode}"></Input> -->
+                <DateTimePicker value="{path:'START_TS', type:'sap.ui.model.odata.type.DateTimeOffset'}" editable="{home>/editMode}"></DateTimePicker>
+                <DateTimePicker value="{path:'END_TS', type:'sap.ui.model.odata.type.DateTimeOffset'}" editable="{home>/editMode}"></DateTimePicker>
                 </cells>
              </ColumnListItem>
             </items>

@@ -23,3 +23,7 @@ File or Folder | Purpose
 - _**Terminal** > bindind to service instances > `cds bind -2 SERVICE_INSTANCE:SERVICE_KEY`
 - _**Terminal** > start services > `cds watch --profile hybrid` 
 - open a new _**Terminal** > start UI >  move to UI folder and run `npm run start-local`
+
+
+## Tips
+If you are using a BTP trial account, remember to start the db hana instance 

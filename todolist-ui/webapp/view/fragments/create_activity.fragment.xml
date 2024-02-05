@@ -31,20 +31,23 @@
           <ColumnListItem>
             <cells>
               <Input value="{create_activity>/NAME}"/>
-              <Input value="{create_activity>/DONE}"/>
+              <!-- <Input value="{create_activity>/DONE}"/> -->
+              <CheckBox selected="{create_activity>/DONE}"></CheckBox>
               <Input value="{create_activity>/OWNER}" />
-              <Input value="{create_activity>/START_TS}" />
-              <Input value="{create_activity>/END_TS}" />
+              <!-- <Input value="{create_activity>/START_TS}" />
+              <Input value="{create_activity>/END_TS}" /> -->
+              <DateTimePicker value="{path:'create_activity>/START_TS', type:'sap.ui.model.odata.type.DateTimeOffset'}"></DateTimePicker>
+              <DateTimePicker value="{path:'create_activity>/END_TS', type:'sap.ui.model.odata.type.DateTimeOffset'}"></DateTimePicker>
             </cells>
           </ColumnListItem>
         </items>
       </Table>
     </content>
     <beginButton>
-      <Button text="Crea" type="Emphasized" press=".handleCreateActivity($event, 'create_activity')" />
+      <Button text="Crea" type="Emphasized" press=".handleCreateActivity('create_activity')" />
     </beginButton>
     <endButton>
-      <Button text="Cancella" press=".closeFragment('create_activity')" />
+      <Button text="Annulla" press=".closeFragment('create_activity')" />
     </endButton>
   </Dialog>
 </core:FragmentDefinition>
