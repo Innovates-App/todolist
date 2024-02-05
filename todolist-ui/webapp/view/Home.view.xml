@@ -1,7 +1,8 @@
 <mvc:View controllerName="todolistui.controller.Home"
     xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
     xmlns="sap.m"
-    xmlns:ui="sap.ui.table">
+    xmlns:ui="sap.ui.table"
+    xmlns:core="sap.ui.core">
     <Page id="page" title="{i18n>title}">
 
         <!-- <ui:Table rows="{path: '/Activity' , parameters: {$expand:'DETAILS'}}" >
@@ -40,7 +41,8 @@
         </ui:Table> -->
 
 
-        <Table id="activityTable" mode="MultiSelect" items="{path: '/Activity'}">
+        <!-- <Table id="activityTable" mode="MultiSelect" items="{path: '/Activity'}"> -->
+        <Table id="activityTable" mode="MultiSelect" items="{path: '/Activity', parameters:{'$expand':'OWNER'}}">
 
 				<headerToolbar>
 					<OverflowToolbar>
@@ -78,7 +80,13 @@
                 <Input value="{NAME}" editable="{home>/editMode}"></Input>
                 <!-- <Input value="{DONE}" editable="{home>/editMode}"></Input> -->
                 <CheckBox selected="{DONE}" editable="{home>/editMode}"></CheckBox>
-                <Input value="{OWNER}" editable="{home>/editMode}"></Input>
+                <!-- <Input value="{OWNER}" editable="{home>/editMode}"></Input> -->
+                <Select selectedKey="{OWNER_ID}" items="{path: '/Owner', templateShareable: false}" forceSelection="false" editable="{home>/editMode}">
+                    <core:Item
+                        key="{ID}"
+                        text="{LAST_NAME}"
+                    />              
+                </Select>
                 <!-- <Input value="{START_TS}" editable="{home>/editMode}"></Input> -->
                 <!-- <Input value="{END_TS}" editable="{home>/editMode}"></Input> -->
                 <DateTimePicker value="{path:'START_TS', type:'sap.ui.model.odata.type.DateTimeOffset'}" editable="{home>/editMode}"></DateTimePicker>
