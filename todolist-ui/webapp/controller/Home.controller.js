@@ -105,6 +105,15 @@ sap.ui.define([
                 } catch (error) {
                     MessageBox.error(error.message)
                 }
+            },
+
+
+            onNavToDetail: function (oEvent) {
+                const oBindingContext = oEvent.getSource().getBindingContext()
+                this.getOwnerComponent().getRouter().navTo("detail", {
+                    ID: window.encodeURIComponent(oBindingContext.getDeepPath())
+                });
+
             }
 
         });

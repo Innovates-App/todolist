@@ -1,0 +1,37 @@
+<mvc:View
+	controllerName="todolistui.controller.Detail"
+	xmlns="sap.m"
+	xmlns:mvc="sap.ui.core.mvc"
+	xmlns:f="sap.ui.layout.form"
+	busyIndicatorDelay="0">
+	<Page
+		showNavButton="true"
+		navButtonPress=".onNavBack"
+		class="sapUiResponsiveContentPadding">
+		<content>
+			<Panel
+				width="auto"
+				class="sapUiNoContentPadding">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="ID Attività : {ID}" level="H2"/>
+					</Toolbar>
+				</headerToolbar>
+				<content>
+					<f:SimpleForm
+						editable="false"
+						layout="ResponsiveGridLayout"
+						labelSpanL="3" labelSpanM="3" emptySpanL="4" emptySpanM="4"
+						columnsL="1" columnsM="1">
+						<f:content>
+							<Label text="Descrizione"/>
+							<Text text="{DETAILS/DESCRIPTION}"/>
+							<Label text="Note"/>
+							<Text text="{DETAILS/NOTE}"/>
+						</f:content>
+					</f:SimpleForm>
+				</content>
+			</Panel>
+		</content>
+	</Page>
+</mvc:View>

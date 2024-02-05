@@ -12,7 +12,7 @@ entity activity : managed {
       // OWNER    : String;
       OWNER    : Association to one owner;
       DETAILS  : Composition of one activity_detail
-                   on DETAILS.ACTIVITY = $self;
+                   on   DETAILS.ACTIVITY = $self;
 }
 
 entity activity_detail : managed {

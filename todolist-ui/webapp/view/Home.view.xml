@@ -75,7 +75,7 @@
             </columns>
 
             <items>
-             <ColumnListItem >
+             <ColumnListItem type="Navigation" press="onNavToDetail">   
                 <cells>
                 <Input value="{NAME}" editable="{home>/editMode}"></Input>
                 <!-- <Input value="{DONE}" editable="{home>/editMode}"></Input> -->

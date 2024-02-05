@@ -16,7 +16,7 @@
       "toolsId": "2549eb7c-7dab-47c8-92e0-c737abeb67da"
     },
     "dataSources": {
-      "cap":{
+      "cap": {
         "uri": "/v2/odata/v4/catalog",
         "type": "OData",
         "settings": {
@@ -67,7 +67,7 @@
           "bundleName": "todolistui.i18n.i18n"
         }
       },
-      "":{
+      "": {
         "dataSource": "cap",
         "settings": {
           "operationMode": "Server",
@@ -99,6 +99,11 @@
           "target": [
             "TargetHome"
           ]
+        },
+        {
+          "pattern": "detail/{ID}",
+          "name": "detail",
+          "target": "detail"
         }
       ],
       "targets": {
@@ -108,6 +113,12 @@
           "clearControlAggregation": false,
           "viewId": "Home",
           "viewName": "Home"
+        },
+        "detail": {
+          "viewType": "XML",
+          "transition": "slide",
+          "viewId": "detail",
+          "viewName": "Detail"
         }
       }
     },
