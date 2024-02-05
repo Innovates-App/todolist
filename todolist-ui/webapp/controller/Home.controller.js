@@ -10,7 +10,26 @@ sap.ui.define([
 
         return Controller.extend("todolistui.controller.Home", {
             onInit: function () {
-                //autenticazione
+                const oController = this
+                const oModel = this.getOwnerComponent().getModel("auth")
+                const baseUrl = window.location.href
+                const url = baseUrl.replace('index.html', 'user-api/currentUser')
+                const settings = {
+                    url: url,
+                    type: 'GET'
+                }
+                $.ajax(settings)
+                    .done(function (response) {
+                        oModel.setProperty("/firstname", response.firstname)
+                        oModel.setProperty("/lastname", response.lastname)
+                        oModel.setProperty("/email", response.email)
+                        oModel.setProperty("/name", response.name)
+                        oModel.setProperty("/displayName", response.displayName)
+                    })
+                    .fail(function (error) {
+                        console.log(error);
+                    })
+
             },
 
             onEdit: function () {

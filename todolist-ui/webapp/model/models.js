@@ -20,6 +20,16 @@ sap.ui.define([
                 return oModel;
             },
 
+            createAuthModel: function () {
+                return new JSONModel({
+                    firstname: "Nome",
+                    lastname: "Cognome",
+                    email: "n.cognome@faretra.com",
+                    name: "n.cognome@faretra.com",
+                    displayName: "Nome Cognome (n.cognome@faretra.com)"               
+                })
+            },
+
             createHomePageModel: function () {
                 return new JSONModel({
                     "editMode": false,

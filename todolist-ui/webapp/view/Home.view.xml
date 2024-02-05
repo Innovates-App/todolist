@@ -5,6 +5,16 @@
     xmlns:core="sap.ui.core">
     <Page id="page" title="{i18n>title}">
 
+
+        <ObjectHeader
+            title="Benvenuto {auth>/firstname}!"
+            class="sapUiResponsivePadding--header"
+            condensed="true"
+            icon="sap-icon://person-placeholder"
+        >
+            <ObjectAttribute text="{auth>/displayName}" />
+        </ObjectHeader>
+
         <!-- <ui:Table rows="{path: '/Activity' , parameters: {$expand:'DETAILS'}}" >
             <ui:columns>
                 <ui:Column >

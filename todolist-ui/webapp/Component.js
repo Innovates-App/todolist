@@ -29,7 +29,9 @@ sap.ui.define([
 
                 // set the device model
                 this.setModel(models.createDeviceModel(), "device");
+                this.setModel(models.createAuthModel(), "auth")
                 this.setModel(models.createHomePageModel(), "home")
+                this.setModel(models.createFragmentCreateActivityModel(), "create_activity")
                 this.setModel(models.createFragmentCreateActivityModel(), "create_activity")
                 this.setModel(models.createFragmentModel(), "fragments")
             }
